@@ -11,9 +11,11 @@ class LinkList:
         self.head = Node(data)
         self.length += 1
         return
-        
+      
+      # Allows us to move through the list
       current = self.head
     
+      # If the next node is "None", we add the new node to the end
       while current.next != None:
         current = current.next
       self.length += 1
@@ -27,11 +29,15 @@ class LinkList:
       if head == None:
         return
       
+      # This makes the head the next node, if you remove the first node
       if head.data == data:
         head = head.next
         length -= 1
 
+      # Allows you to move through the list
       current = self.head
+
+      # If the node next to the current node has the requested data to be removed, we set the next node to the one after it
       while current.next != None:
         if current.next.data == data:
           current.next = current.next.next
@@ -46,7 +52,10 @@ class LinkList:
       if self.head.data == element_to_get:
         return element_to_get
 
+      # Allows us to move through the list
       current = self.head
+
+      # If the node contains the data requested, we return the data
       while current.next != None:
         if current.next.data == element_to_get:
           return element_to_get
